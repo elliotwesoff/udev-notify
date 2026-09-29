@@ -1,0 +1,6 @@
+[Unit]
+Description=Monitor udev events for USB device changes
+
+[Service]
+ExecStart=/usr/bin/udev-notify udev-usb
+Restart=always

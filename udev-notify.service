@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor udev events for triggering system notifications
+Wants=udev-notify-usb.service udev-notify-blk.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/true
+
+[Install]
+WantedBy=multi-user.target

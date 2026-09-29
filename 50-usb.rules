@@ -1,0 +1,2 @@
+ACTION=="add|remove|change", SUBSYSTEM=="block", KERNEL=="sd[a-z]", ATTRS{busnum}=="*", RUN+="/usr/bin/systemd-cat --identifier=udev-block echo block %E{ACTION}: /dev/%k"
+ACTION=="add|remove|change", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", RUN+="/usr/bin/systemd-cat --identifier=udev-usb echo usb %E{ACTION}: /dev/%k %E{ID_VENDOR_FROM_DATABASE} %E{ID_USB_MODEL}"
