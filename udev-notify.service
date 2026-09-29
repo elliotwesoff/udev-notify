@@ -1,6 +1,8 @@
 [Unit]
 Description=Monitor udev events for triggering system notifications
 Wants=udev-notify-usb.service udev-notify-blk.service
+After=graphical-session.target
+Requisite=graphical-session.target
 
 [Service]
 Type=oneshot
@@ -8,4 +10,4 @@ RemainAfterExit=yes
 ExecStart=/bin/true
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
