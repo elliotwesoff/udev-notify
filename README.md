@@ -1,7 +1,6 @@
 # udev-notify
 
-Monitors udev events for block and USB devices, and triggers desktop notifications via `notify-send`.
-
+> Monitors udev events for block and USB device changes and triggers desktop notifications via `notify-send`
 
 ## Installation
 
