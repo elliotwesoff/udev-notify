@@ -1,5 +1,6 @@
 [Unit]
 Description=Monitor udev events for USB device changes
+PartOf=udev-notify.target
 
 [Service]
 ExecStart=/usr/bin/udev-notify udev-usb

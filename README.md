@@ -8,4 +8,6 @@ _for Arch Linux-based systems only_
 
 1. Clone
 2. `makepkg -si`
-3. `systemctl --user enable udev-notify`
+3. `systemctl --user enable --now udev-notify.target`
+4. ???
+5. Profit!

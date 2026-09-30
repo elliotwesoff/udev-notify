@@ -1,6 +1,6 @@
 # Maintainer: Elliot Wesoff
 pkgname=udev-notify
-pkgver=1.0.1
+pkgver=1.2.0
 pkgrel=1
 pkgdesc="Monitor udev events and trigger system notifications on changes"
 arch=('any')
@@ -10,22 +10,22 @@ depends=('libnotify' 'systemd')
 source=(
   'udev-notify.sh'
   '50-usb.rules'
-  'udev-notify.service'
+  'udev-notify.target'
   'udev-notify-blk.service'
   'udev-notify-usb.service'
 )
 sha256sums=(
   '9deb51f13d0b26369dcfa93967c30c0eba14ae0772db59a63ee1b648a711e7bd'
   '95efe4e5faa76d4e700960537d2bc152f3553ddf75e97ded00351e486af453d7'
-  '5bafb3415fbc24e2b493f972045141986c77b09af4ed2cce3302dbb4f5df9068'
-  '4f72a7b7440b86514630a3799f031347e4a1f080240496386a28fa0852bd8725'
-  '3f015be9aa10918ae0baf1aeb2d3415c581bd3711b12a11070b18581fad85ddb'
+  '3c37b23ce95c91ab301a4d1ae9e6c0ed24ac3e5b5526245100ba1fd21a1da896'
+  '88d0b042ec55dd68c30918948954e34a5784f11526db383aee6c2b3b7c35c6d2'
+  '140bbd47ae27ba4675d1c2f0d4e517f1ab3a49bfcba47cf90e5be916ab4178db'
 )
 
 package() {
   install -Dm755 "${srcdir}/udev-notify.sh" "${pkgdir}/usr/bin/udev-notify"
   install -Dm644 "${srcdir}/50-usb.rules" "${pkgdir}/etc/udev/rules.d/50-usb.rules"
-  install -Dm644 "${srcdir}/udev-notify.service" "${pkgdir}/usr/lib/systemd/user/udev-notify.service"
+  install -Dm644 "${srcdir}/udev-notify.target" "${pkgdir}/usr/lib/systemd/user/udev-notify.target"
   install -Dm644 "${srcdir}/udev-notify-usb.service" "${pkgdir}/usr/lib/systemd/user/udev-notify-usb.service"
   install -Dm644 "${srcdir}/udev-notify-blk.service" "${pkgdir}/usr/lib/systemd/user/udev-notify-blk.service"
 }
