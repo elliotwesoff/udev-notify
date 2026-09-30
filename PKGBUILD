@@ -1,6 +1,6 @@
 # Maintainer: Elliot Wesoff
 pkgname=udev-notify
-pkgver=1.2.0
+pkgver=1.0.0
 pkgrel=1
 pkgdesc="Monitor udev events and trigger system notifications on changes"
 arch=('any')
